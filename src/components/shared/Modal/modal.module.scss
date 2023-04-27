@@ -1,0 +1,19 @@
+.contenier {
+   position: absolute;
+   top: 0;
+   background: white;
+   height: 517px;
+   border: 1px solid gray;
+   width: 300px;
+   display: none;
+
+   &.active {
+      display: block;
+      border-left: none;
+      border-top: none;
+   }
+}
+
+.content {
+   display: block;
+}

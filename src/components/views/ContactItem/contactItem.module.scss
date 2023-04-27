@@ -1,0 +1,25 @@
+.contact {
+   display: flex;
+   height: 40px;
+   align-items: center;
+   cursor: pointer;
+   padding: 10px;
+   border-bottom: 1px solid gray;
+
+   &:last-child {
+      border: none;
+   }
+
+   &__photo {
+      width: 30px;
+      height: 30px;
+      border: 1px solid;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      margin-right: 10px;
+      font-weight: 500;
+   }
+}

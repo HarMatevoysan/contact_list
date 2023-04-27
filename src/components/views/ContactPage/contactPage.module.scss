@@ -1,0 +1,147 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+
+   &__back {
+      cursor: pointer;
+      color: #3893C8;
+   }
+
+   &__edit {
+      color: #3893C8;
+      cursor: pointer;
+   }
+}
+
+.info {
+   &__img {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      width: 150px;
+      border: 2px solid gray;
+      border-radius: 50%;
+      margin: 0 auto;
+
+      &_img {
+         height: 100%;
+         width: 100%;
+      }
+
+      p {
+         font-size: 90px;
+         margin-top: -15px;
+         color: gray
+      }
+   }
+
+   &__title {
+      text-align: center;
+      margin: 15px 0 0 0;
+      text-transform: uppercase;
+      font-size: 20px;
+      FONT-WEIGHT: 500;
+   }
+
+   &__actions {
+      display: flex;
+      justify-content: space-around;
+      width: 130px;
+      justify-items: center;
+      align-items: center;
+      margin: 15px auto;
+
+      &_block {
+         padding: 6px 15px;
+         border: 2px solid #3893C8;
+         border-radius: 15px;
+         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+         height: 55px;
+         width: 55px;
+
+         a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            align-items: center;
+            font-size: 16px;
+         }
+
+         &_phone {
+            width: 20px;
+         }
+
+         &_mail {
+            width: 25px;
+         }
+      }
+   }
+
+   &__info {
+      padding: 0 15px;
+
+      &_item {
+         margin: 10px 0;
+         border-bottom: 1px solid;
+
+         p {
+            margin: 5px 0;
+            font-size: 16px;
+         }
+      }
+
+      &_link {
+         color: #3893C8;
+         font-size: 16px;
+         padding-bottom: 5px;
+         display: block;
+      }
+   }
+}
+
+.remove {
+   font-size: 16px;
+   padding: 5px;
+   background: transparent;
+   border-radius: 10px;
+   display: flex;
+   margin: 20px auto;
+   color: red;
+   font-weight: 700;
+   cursor: pointer;
+}
+
+.edit {
+   margin: 0;
+
+   &__img {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      cursor: pointer;
+
+      &_input {
+         display: none;
+      }
+
+      &_title {
+         color: #3893C8;
+         font-weight: 600;
+      }
+   }
+}
+
+.inputs {
+   margin: 0;
+
+   input {
+      border-bottom: 1px solid;
+      width: 90%;
+      padding: 7px 10px;
+      margin: 5px 10px;
+   }
+}

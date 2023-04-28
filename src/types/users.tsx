@@ -1,4 +1,4 @@
-import { usersTypes } from "./../store/actionTypes";
+import { UsersTypes } from "./../store/actionTypes";
 
 interface ICompany {
   name: string;
@@ -21,21 +21,21 @@ export interface userState {
 }
 
 interface fetchUsers {
-  type: usersTypes.FETCH_USERS;
+  type: UsersTypes.FETCH_USERS;
 }
 
 interface fetchUsersSuccessful {
-  type: usersTypes.FETCH_USERS_SUCCESSFUL;
+  type: UsersTypes.FETCH_USERS_SUCCESSFUL;
   payload: [];
 }
 
 interface fetchUsersError {
-  type: usersTypes.FETCH_USERS_ERROR;
+  type: UsersTypes.FETCH_USERS_ERROR;
   payload: string;
 }
 
 interface addUser {
-  type: usersTypes.ADD_USER;
+  type: UsersTypes.ADD_USER;
   payload: [
     name: string,
     phone: string,
@@ -46,17 +46,17 @@ interface addUser {
 }
 
 interface removeUser {
-  type: usersTypes.REMOVE_USER;
+  type: UsersTypes.REMOVE_USER;
   payload: string;
 }
 
 interface queryUser {
-  type: usersTypes.QUERY_USER;
+  type: UsersTypes.QUERY_USER;
   payload: string;
 }
 
 interface editUser {
-  type: usersTypes.UPDATE_USER;
+  type: UsersTypes.UPDATE_USER;
   payload: [
     id: number,
     name: string,

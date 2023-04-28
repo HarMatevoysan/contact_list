@@ -1,5 +1,5 @@
 import { userAction, userState } from "../types/users";
-import { usersTypes } from "./actionTypes";
+import { UsersTypes } from "./actionTypes";
 
 const defaultState: userState = {
   users: [],
@@ -13,10 +13,10 @@ const contactsReducer = (
   action: userAction
 ): userState => {
   switch (action.type) {
-    case usersTypes.FETCH_USERS:
+    case UsersTypes.FETCH_USERS:
       return { ...state, loading: true };
 
-    case usersTypes.FETCH_USERS_SUCCESSFUL:
+    case UsersTypes.FETCH_USERS_SUCCESSFUL:
       return {
         ...state,
         loading: false,
@@ -24,10 +24,10 @@ const contactsReducer = (
         user: action.payload,
       };
 
-    case usersTypes.FETCH_USERS_ERROR:
+    case UsersTypes.FETCH_USERS_ERROR:
       return { ...state, loading: false, error: action.payload };
 
-    case usersTypes.ADD_USER:
+    case UsersTypes.ADD_USER:
       const newUser = {
         id: Date.now(),
         name: action.payload[0],
@@ -43,7 +43,7 @@ const contactsReducer = (
         user: [...state.user, newUser],
       };
 
-    case usersTypes.REMOVE_USER:
+    case UsersTypes.REMOVE_USER:
       return {
         ...state,
         loading: false,
@@ -51,7 +51,7 @@ const contactsReducer = (
         user: state.user.filter((id) => id.id !== action.payload),
       };
 
-    case usersTypes.QUERY_USER:
+    case UsersTypes.QUERY_USER:
       return {
         ...state,
         loading: false,
@@ -62,7 +62,7 @@ const contactsReducer = (
         ],
       };
 
-    case usersTypes.UPDATE_USER:
+    case UsersTypes.UPDATE_USER:
       return {
         ...state,
         loading: false,

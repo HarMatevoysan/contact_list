@@ -1,4 +1,4 @@
-export enum usersTypes {
+export enum UsersTypes {
   ADD_USER = "ADD_USER",
   QUERY_USER = "QUERY_USER",
   FETCH_USERS = "FETCH_USERS",

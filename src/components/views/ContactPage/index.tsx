@@ -3,7 +3,7 @@ import { IContactPage } from "./types";
 import { useDispatch } from "react-redux";
 import mail from "../.././../assets/mail.png";
 import phone from "../.././../assets/phone.png";
-import { usersTypes } from "../../../store/actionTypes";
+import { UsersTypes } from "../../../store/actionTypes";
 import style from "./contactPage.module.scss";
 
 const ContactPage: FC<IContactPage> = ({ contact, setVisible }) => {
@@ -38,7 +38,7 @@ const ContactPage: FC<IContactPage> = ({ contact, setVisible }) => {
   };
 
   const removeContact = () => {
-    dispatch({ type: usersTypes.REMOVE_USER, payload: contact.id });
+    dispatch({ type: UsersTypes.REMOVE_USER, payload: contact.id });
     setVisible(false);
   };
 
@@ -60,7 +60,7 @@ const ContactPage: FC<IContactPage> = ({ contact, setVisible }) => {
 
   const doneEdit = () => {
     dispatch({
-      type: usersTypes.UPDATE_USER,
+      type: UsersTypes.UPDATE_USER,
       payload: [contact.id, editName, editPhone, editEmail, editCompany, img],
     });
     setIsEdit(false);

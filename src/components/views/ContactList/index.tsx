@@ -1,4 +1,4 @@
-import { useEffect, FC } from "react";
+import { FC } from "react";
 import { IContactList } from "./types";
 import { ContactItem } from "../../index";
 import { defaultState } from "../../../types/users";

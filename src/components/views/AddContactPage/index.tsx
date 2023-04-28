@@ -2,7 +2,7 @@ import React, { useState, FC } from "react";
 import { useDispatch } from "react-redux";
 import { IAddContactPage } from "./types";
 import user from "./../../../assets/user.png";
-import { usersTypes } from "../../../store/actionTypes";
+import { UsersTypes } from "../../../store/actionTypes";
 import style from "./addContactPage.module.scss";
 
 const AddContactPage: FC<IAddContactPage> = ({ setVisible }) => {
@@ -31,7 +31,7 @@ const AddContactPage: FC<IAddContactPage> = ({ setVisible }) => {
 
   const handleSumbmit = () => {
     dispatch({
-      type: usersTypes.ADD_USER,
+      type: UsersTypes.ADD_USER,
       payload: [name, phone, email, company, img],
     });
     setVisible(false);

@@ -3,7 +3,7 @@ import { IHeader } from "./types";
 import { useDispatch } from "react-redux";
 import plus from "./../../../assets/plus.png";
 import search from "./../../../assets/search.png";
-import { usersTypes } from "../../../store/actionTypes";
+import { UsersTypes } from "../../../store/actionTypes";
 import style from "./header.module.scss";
 
 const Header: FC<IHeader> = ({ setAddPage, setQuery, query }) => {
@@ -12,7 +12,7 @@ const Header: FC<IHeader> = ({ setAddPage, setQuery, query }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
-    dispatch({ type: usersTypes.QUERY_USER, payload: e.target.value });
+    dispatch({ type: UsersTypes.QUERY_USER, payload: e.target.value });
   };
 
   return (

@@ -21,5 +21,20 @@
       background-size: cover;
       margin-right: 10px;
       font-weight: 500;
+      background-repeat: no-repeat;
+   }
+
+   &__modal {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%);
+      height: 100%;
+
+      width: 100%;
+
+      @media(max-width:410px) {
+         top: 0;
+      }
    }
 }

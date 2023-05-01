@@ -1,8 +1,12 @@
 import { FC } from "react";
+
 import { IContactList } from "./types";
+
 import { ContactItem } from "../../index";
-import { defaultState } from "../../../types/users";
-import style from "./contactList.module.scss";
+
+import { IDefaultState } from "../../../types/users";
+
+import style from "./ContactList.module.scss";
 
 const ContactList: FC<IContactList> = ({ state, query }) => {
   const firstChildArray = state.reduce((acc, item) => {
@@ -15,38 +19,35 @@ const ContactList: FC<IContactList> = ({ state, query }) => {
   }, {});
 
   const letters = Object.keys(firstChildArray);
+
   const sortedLetters = letters.sort((a, b) => a.localeCompare(b));
 
-  const array = sortedLetters.map((letter, i) => (
+  const contactItems = sortedLetters.map((letter, i) => (
     <div className={style.list__group} key={i}>
       <h2 className={style.list__title}>{letter}</h2>
-      {firstChildArray[letter].map((item: defaultState, j: number) => {
-        return <ContactItem contact={item} key={j} />;
-      })}
+      {firstChildArray[letter].map((item: IDefaultState, j: number) => (
+        <ContactItem contact={item} key={j} />
+      ))}
     </div>
   ));
 
-  const filterdArray = state.map((state) => {
-    return <ContactItem contact={state} key={state.id} />;
-  });
+  const searchTitle = state.length ? `Searching by "${query}"` : `No data by "${query}"`;
+
+  const filteredContactItems = state.map((state) => <ContactItem contact={state} key={state.id} />);
+
+  const contactsLenghtTitle = !query ? <div className={style.list__count}>{state.length + " Contacts"}</div> : null;
 
   return (
     <div className={style.list}>
       {query ? (
         <>
-          <p className={style.list__search_title}>
-            {state.length ? `Searching by"${query}"` : `No data by "${query}"`}
-          </p>
-          {filterdArray}
+          <p className={style.list__search_title}>{searchTitle}</p>
+          {filteredContactItems}
         </>
       ) : (
-        array
+        contactItems
       )}
-      {!query ? (
-        <div className={style.list__count}>{state.length + " Contacts"}</div>
-      ) : (
-        <></>
-      )}
+      {contactsLenghtTitle}
     </div>
   );
 };

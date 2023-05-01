@@ -4,7 +4,7 @@ interface ICompany {
   name: string;
 }
 
-export interface defaultState {
+export interface IDefaultState {
   name: string;
   id: number;
   email: string;
@@ -13,65 +13,52 @@ export interface defaultState {
   img: string;
 }
 
-export interface userState {
+export interface IUserState {
   users: any[];
   user: any[];
   loading: boolean;
   error: null | string;
 }
 
-interface fetchUsers {
+interface IFetchUsers {
   type: UsersTypes.FETCH_USERS;
 }
 
-interface fetchUsersSuccessful {
+interface IFetchUsersSuccessful {
   type: UsersTypes.FETCH_USERS_SUCCESSFUL;
   payload: [];
 }
 
-interface fetchUsersError {
+interface IFetchUsersError {
   type: UsersTypes.FETCH_USERS_ERROR;
   payload: string;
 }
 
-interface addUser {
+interface IAddUser {
   type: UsersTypes.ADD_USER;
-  payload: [
-    name: string,
-    phone: string,
-    email: string,
-    company: string,
-    img: string
-  ];
+  payload: [name: string, phone: string, email: string, company: string, img: string];
 }
 
-interface removeUser {
+interface IRemoveUser {
   type: UsersTypes.REMOVE_USER;
   payload: string;
 }
 
-interface queryUser {
+interface IQueryUser {
   type: UsersTypes.QUERY_USER;
   payload: string;
 }
 
-interface editUser {
+interface IEditUser {
   type: UsersTypes.UPDATE_USER;
-  payload: [
-    id: number,
-    name: string,
-    phone: string,
-    email: string,
-    company: string,
-    img: string
-  ];
+  payload: [id: number, name: string, phone: string, email: string, company: string, img: string];
 }
 
 export type userAction =
-  | fetchUsers
-  | fetchUsersSuccessful
-  | fetchUsersError
-  | addUser
-  | removeUser
-  | editUser
-  | queryUser;
+  | IFetchUsers
+  | IFetchUsersSuccessful
+  | IFetchUsersError
+  | IAddUser
+  | IRemoveUser
+  | IEditUser
+  | IQueryUser;

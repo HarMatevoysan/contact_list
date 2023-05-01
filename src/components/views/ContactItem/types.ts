@@ -1,5 +1,5 @@
-import { defaultState } from "../../../types/users";
+import { IDefaultState } from "../../../types/users";
 
 export interface IContactItem {
-  contact: defaultState;
+  contact: IDefaultState;
 }

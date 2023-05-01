@@ -1,4 +1,4 @@
 export interface IModal {
-  children: React.ReactChild | React.ReactNode;
+  children: React.ReactNode;
   visible: boolean;
 }

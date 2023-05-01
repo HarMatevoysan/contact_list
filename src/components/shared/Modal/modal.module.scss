@@ -1,19 +1,30 @@
-.contenier {
-   position: absolute;
-   top: 0;
+.container {
    background: white;
-   height: 517px;
-   border: 1px solid gray;
+   height: 630px;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%);
    width: 300px;
    display: none;
+   overflow: scroll;
+
+   @media (max-width:410px) {
+      width: 100%;
+      height: 100%;
+   }
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
 
    &.active {
       display: block;
       border-left: none;
       border-top: none;
    }
-}
 
-.content {
-   display: block;
+   &__content {
+      display: block;
+   }
 }

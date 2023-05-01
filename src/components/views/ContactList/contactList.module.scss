@@ -1,6 +1,10 @@
 .list {
-   height: 400px;
+   height: 530px;
    overflow-y: scroll;
+
+   @media(max-width:410px) {
+      height: auto;
+   }
 
    &::-webkit-scrollbar {
       display: none;

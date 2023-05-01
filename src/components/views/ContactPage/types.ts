@@ -1,6 +1,6 @@
-import { defaultState } from "../../../types/users";
+import { IDefaultState } from "../../../types/users";
 
 export interface IContactPage {
-  contact: defaultState;
+  contact: IDefaultState;
   setVisible: (value: boolean) => void;
 }

@@ -1,4 +1,4 @@
-.contenier {
+.container {
    padding: 7px 10px;
 }
 
@@ -46,6 +46,9 @@
       border: 2px solid gray;
       border-radius: 50%;
       margin: 0 auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
       img {
          height: 80px;

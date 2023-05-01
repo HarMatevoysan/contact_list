@@ -1,17 +1,15 @@
-import { userAction, userState } from "../types/users";
 import { UsersTypes } from "./actionTypes";
 
-const defaultState: userState = {
+import { userAction, IUserState } from "../types/users";
+
+const defaultState: IUserState = {
   users: [],
   user: [],
   loading: false,
   error: null,
 };
 
-const contactsReducer = (
-  state = defaultState,
-  action: userAction
-): userState => {
+const contactsReducer = (state = defaultState, action: userAction): IUserState => {
   switch (action.type) {
     case UsersTypes.FETCH_USERS:
       return { ...state, loading: true };
@@ -55,11 +53,7 @@ const contactsReducer = (
       return {
         ...state,
         loading: false,
-        users: [
-          ...state.user.filter((id) =>
-            id.name.toLowerCase().includes(action.payload.toLowerCase())
-          ),
-        ],
+        users: [...state.user.filter((id) => id.name.toLowerCase().includes(action.payload.toLowerCase()))],
       };
 
     case UsersTypes.UPDATE_USER:

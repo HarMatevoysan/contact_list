@@ -12,6 +12,10 @@
       color: #3893C8;
       cursor: pointer;
    }
+
+   @media(max-width:410px) {
+      font-size: 18px;
+   }
 }
 
 .info {
@@ -24,7 +28,9 @@
       width: 150px;
       border: 2px solid gray;
       border-radius: 50%;
-      margin: 0 auto;
+      margin: 15px auto;
+      background-size: cover;
+      background-repeat: no-repeat;
 
       &_img {
          height: 100%;
@@ -44,6 +50,8 @@
       text-transform: uppercase;
       font-size: 20px;
       FONT-WEIGHT: 500;
+      overflow-wrap: break-word;
+
    }
 
    &__actions {
@@ -85,7 +93,7 @@
       padding: 0 15px;
 
       &_item {
-         margin: 10px 0;
+         margin: 20px 0;
          border-bottom: 1px solid;
 
          p {
@@ -109,7 +117,7 @@
    background: transparent;
    border-radius: 10px;
    display: flex;
-   margin: 20px auto;
+   margin: 50px auto;
    color: red;
    font-weight: 700;
    cursor: pointer;
